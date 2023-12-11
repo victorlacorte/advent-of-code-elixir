@@ -3,18 +3,13 @@ defmodule AdventOfCodeTest.Year2023.Day1Test do
   doctest AdventOfCode
 
   test "solve part 1 example" do
-    {:ok, stream} =
-      """
+    assert(
+      AdventOfCode.Utils.stream_str("""
       1abc2
       pqr3stu8vwx
       a1b2c3d4e5f
       treb7uchet
-      """
-      |> StringIO.open()
-
-    assert(
-      stream
-      |> IO.binstream(:line)
+      """)
       |> AdventOfCode.Year2023.Day1.solve_part1() == 142
     )
   end
@@ -28,8 +23,8 @@ defmodule AdventOfCodeTest.Year2023.Day1Test do
   end
 
   test "solve part 2 example" do
-    {:ok, stream} =
-      """
+    assert(
+      AdventOfCode.Utils.stream_str("""
       two1nine
       eightwothree
       abcone2threexyz
@@ -37,12 +32,7 @@ defmodule AdventOfCodeTest.Year2023.Day1Test do
       4nineeightseven2
       zoneight234
       7pqrstsixteen
-      """
-      |> StringIO.open()
-
-    assert(
-      stream
-      |> IO.binstream(:line)
+      """)
       |> AdventOfCode.Year2023.Day1.solve_part2() == 281
     )
   end
